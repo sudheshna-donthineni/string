@@ -1,0 +1,15 @@
+class Solution:
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        ind = []
+        for i in set(s):
+            if s.count(i) == 1:
+                ind.append(s.index(i))
+        
+        if len(ind) > 0:
+            return min(ind)
+        return -1
+        
