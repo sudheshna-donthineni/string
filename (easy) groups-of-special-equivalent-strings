@@ -1,0 +1,16 @@
+class Solution(object):
+    def numSpecialEquivGroups(self, A):
+        """
+        :type A: List[str]
+        :rtype: int
+        """
+        d = collections.defaultdict(int)
+        
+        for word in A:
+            even = ''.join(sorted(word[0::2]))
+            odd = ''.join(sorted(word[1::2]))
+            d[(even,odd)] += 1
+        
+        return len(d)
+        
+        
